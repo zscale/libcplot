@@ -49,16 +49,17 @@ using stx::test::UnitTest;
 static void compareChart(
     Canvas* chart,
     const std::string& file_name) {
-  auto output_stream = FileOutputStream::openFile(
-      FileUtil::joinPaths(UnitTest::tempFilePath(), file_name));
+  RAISE(kNotImplementedError);
+  //auto output_stream = FileOutputStream::openFile(
+  //    FileUtil::joinPaths(UnitTest::tempFilePath(), file_name));
 
-  SVGTarget target(output_stream.get());
-  chart->render(&target);
+  //SVGTarget target(output_stream.get());
+  //chart->render(&target);
 
-  EXPECT_FILES_EQ(
-      FileUtil::joinPaths(UnitTest::tempFilePath(), file_name),
-      FileUtil::joinPaths(
-          UnitTest::testDataPath(), "chart/testdata/" + file_name));
+  //EXPECT_FILES_EQ(
+  //    FileUtil::joinPaths(UnitTest::tempFilePath(), file_name),
+  //    FileUtil::joinPaths(
+  //        UnitTest::testDataPath(), "chart/testdata/" + file_name));
 }
 
 TEST_CASE(ChartTest, TestCanvasWithLeftAxis, [] () {
